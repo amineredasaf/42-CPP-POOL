@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:09:45 by rsaf              #+#    #+#             */
-/*   Updated: 2022/08/07 18:24:20 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/08/07 20:23:22 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,23 @@ std::string PhoneBook::DisplayPrompet(void)
 	std::cout << "~~~~~~~~~\n";
 	std::cout << "~Choice Your Action: ";
 	std::getline(std::cin, this->PrompetLine);
+	if (std::cin.eof())
+		return("exit");
 	return this->PrompetLine;
+}
+
+std::string	PhoneBook::readLINE(std::string message)
+{
+	std::string userINPUT;
+
+	while (userINPUT.empty())
+	{
+		std::cout << message;
+		std::getline(std::cin, userINPUT);
+		if (std::cin.eof())
+			return NULL;
+	}
+	return (userINPUT);
 }
 
 void	PhoneBook::ActionADD()
@@ -34,20 +50,13 @@ void	PhoneBook::ActionADD()
 	std::string	Nickname;
 	std::string	PhoneNumber;
 	std::string	DarkestSec;
-	std::cout << "~~~~~~~~~~~~~~~~~~~~~~\n";
-	std::cout << this->idx << "\n";
-	std::cout << "~~~~~~~~~~~~~~~~~~~~~~\n";
-	std::cout << "~~Contact First Name\t\t: ";
-	std::getline(std::cin, FirstName);
-	std::cout << "~~Contact Last Name\t\t: ";
-	std::getline(std::cin, LastName);
-	std::cout << "~~Contact Nickname\t\t: ";
-	std::getline(std::cin, Nickname);
-	std::cout << "~~Contact Phone Number\t\t: ";
-	std::getline(std::cin, PhoneNumber);
-	std::cout << "~~Contact Darkest secret\t: ";
-	std::getline(std::cin, DarkestSec);
-	contacts[this->idx].setInfo(FirstName, LastName, Nickname, PhoneNumber, DarkestSec);
+
+	FirstName = readLINE("~~Contact First Name\t\t: ");
+	LastName = readLINE("~~Contact Last Name\t\t: ");
+	Nickname = readLINE("~~Contact Nickname\t\t: ");
+	PhoneNumber = readLINE("~~Contact Phone Number\t\t: ");
+	DarkestSec = readLINE("~~Contact Darkest secret\t: ");
+	// contacts[this->idx].setInfo(FirstName, LastName, Nickname, PhoneNumber, DarkestSec);
 	if (this->idx < 8)
 		this->idx++;
 	else

@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:56:38 by rsaf              #+#    #+#             */
-/*   Updated: 2022/08/07 18:21:43 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/08/07 19:56:08 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class PhoneBook
 	public:
 		PhoneBook() { this->idx = 0; }
 		std::string	DisplayPrompet();
+		std::string	readLINE(std::string message);
 		void    	ActionADD();
 		void    	ActionSEARCH();
 		void		DisplayContacts();
