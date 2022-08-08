@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 12:44:35 by rsaf              #+#    #+#             */
-/*   Updated: 2022/08/07 20:34:54 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/08/08 20:03:11 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACTS_HPP
 
 #include    <iostream>
+#include    <iomanip>      // std::setw
 
 # define POP std::cout << "Poped Here\n";
 class Contact

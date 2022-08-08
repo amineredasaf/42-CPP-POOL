@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:09:45 by rsaf              #+#    #+#             */
-/*   Updated: 2022/08/08 19:20:04 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/08/08 20:14:21 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ std::string	PhoneBook::readLINE(std::string message)
 	return (userINPUT);
 }
 
-void	PhoneBook::changeIDX()
+void	PhoneBook::changeIDX(void)
 {
 	if (this->idx < 8)
 		this->idx++;
@@ -51,7 +51,7 @@ void	PhoneBook::changeIDX()
 		this->idx =  0;
 }
 
-int		PhoneBook::ActionADD()
+int		PhoneBook::ActionADD(void)
 {
 	std::string	FirstName;
 	std::string	LastName;
@@ -74,6 +74,35 @@ int		PhoneBook::ActionADD()
 	DarkestSec = readLINE("~~Contact Darkest secret\t: ");
 	if (DarkestSec.empty())
 		return 2;
+	contacts[this->idx].setInfo(FirstName, LastName, Nickname, PhoneNumber, DarkestSec);
 	changeIDX();
+	return (0);
+}
+
+void	PhoneBook::DisplayContacts(void)
+{
+	std::string	FirstName;
+	std::string	LastName;
+	std::string	Nickname;
+	int	x;
+
+	x = -1;
+	while (++x < this->idx)
+	{
+		FirstName = contacts[x].getFirstName();
+		LastName = contacts[x].getLastName();
+		Nickname = contacts[x].getNickname();
+		std::cout << "----------------------------------------\n";
+		std::cout << "|   " << x << "   |";
+		if (FirstName.length() < 10)
+			std::cout << FirstName << std::setw((10 - FirstName.length())) << "|";
+		std::cout << std::endl;
+		std::cout << "----------------------------------------\n";
+	}
+}
+
+int		PhoneBook::ActionSEARCH(void)
+{
+	DisplayContacts();
 	return (0);
 }
