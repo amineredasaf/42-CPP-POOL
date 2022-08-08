@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:09:45 by rsaf              #+#    #+#             */
-/*   Updated: 2022/08/07 20:23:22 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/08/08 19:20:04 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,20 @@ std::string	PhoneBook::readLINE(std::string message)
 		std::cout << message;
 		std::getline(std::cin, userINPUT);
 		if (std::cin.eof())
-			return NULL;
+			return std::string();
 	}
 	return (userINPUT);
 }
 
-void	PhoneBook::ActionADD()
+void	PhoneBook::changeIDX()
+{
+	if (this->idx < 8)
+		this->idx++;
+	else
+		this->idx =  0;
+}
+
+int		PhoneBook::ActionADD()
 {
 	std::string	FirstName;
 	std::string	LastName;
@@ -52,24 +60,20 @@ void	PhoneBook::ActionADD()
 	std::string	DarkestSec;
 
 	FirstName = readLINE("~~Contact First Name\t\t: ");
+	if (FirstName.empty())
+		return 2;
 	LastName = readLINE("~~Contact Last Name\t\t: ");
+	if (LastName.empty())
+		return 2;
 	Nickname = readLINE("~~Contact Nickname\t\t: ");
+	if (Nickname.empty())
+		return 2;
 	PhoneNumber = readLINE("~~Contact Phone Number\t\t: ");
+	if (PhoneNumber.empty())
+		return 2;
 	DarkestSec = readLINE("~~Contact Darkest secret\t: ");
-	// contacts[this->idx].setInfo(FirstName, LastName, Nickname, PhoneNumber, DarkestSec);
-	if (this->idx < 8)
-		this->idx++;
-	else
-		this->idx =  0;
+	if (DarkestSec.empty())
+		return 2;
+	changeIDX();
+	return (0);
 }
-
-
-
-// void	PhoneBook::ActionSEARCH(int idx)
-// {
-// 	int	x;
-
-// 	x = 0;
-// 	DisplayContacts();
-// 	contacts[idx].setInfo(FirstName, LastName, Nickname, PhoneNumber, DarkestSec);
-// }

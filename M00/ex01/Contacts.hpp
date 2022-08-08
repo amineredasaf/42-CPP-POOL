@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 12:44:35 by rsaf              #+#    #+#             */
-/*   Updated: 2022/08/07 20:11:46 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/08/07 20:34:54 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include    <iostream>
 
+# define POP std::cout << "Poped Here\n";
 class Contact
 {
     private:  
