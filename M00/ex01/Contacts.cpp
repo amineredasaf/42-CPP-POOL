@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 12:44:33 by rsaf              #+#    #+#             */
-/*   Updated: 2022/08/08 19:29:43 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/08/19 19:56:46 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ std::string Contact::getFirstName() {return this->FirstName;}
 std::string Contact::getLastName() {return this->LastName;}
 std::string Contact::getNickname() {return this->Nickname;}
 std::string Contact::getPhoneNumber() {return this->PhoneNumber;}
+std::string Contact::getDarkestSecret() {return this->DarkestSecret;}
 
 /*                  setters                 */
 /*------------------------------------------*/

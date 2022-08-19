@@ -6,13 +6,14 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 12:44:35 by rsaf              #+#    #+#             */
-/*   Updated: 2022/08/08 20:03:11 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/08/19 16:37:53 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACTS_HPP
 # define CONTACTS_HPP
 
+#define SGE std::cout << "\n - >>>>>>>>>>>>>>>>>>>>>>>>>>>  ~SEG HERE\n";
 #include    <iostream>
 #include    <iomanip>      // std::setw
 
