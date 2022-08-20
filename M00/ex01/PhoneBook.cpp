@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:09:45 by rsaf              #+#    #+#             */
-/*   Updated: 2022/08/20 00:37:06 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/08/20 01:05:13 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,8 @@ int		PhoneBook::DisplayNcontact(void)
 	{
 		std::cout << "Entre The Contact index : ";
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			return(-2);
 		if (input >= "0" && input <= "9")
 			index = std::stoi(input);
 		else
@@ -161,6 +163,7 @@ int		PhoneBook::ActionSEARCH(void)
 		std::cout << "A Secret		:	";
 		std::cout << contacts[idx].getDarkestSecret()<< "\n";
 		std::cout << "------------------------------------------\n";
-	}
+	}else
+		return (2);
 	return (0);
 }
