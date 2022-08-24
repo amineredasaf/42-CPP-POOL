@@ -18,9 +18,6 @@
 
 #include <iostream>
 #include <functional>
-#include <vector>
-#include <algorithm>
-#include <string>
 
 class Account {
 
