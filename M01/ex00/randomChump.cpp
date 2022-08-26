@@ -6,7 +6,15 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 01:45:25 by rsaf              #+#    #+#             */
-/*   Updated: 2022/08/26 01:45:26 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/08/26 02:50:52 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
+
+void randomChump( std::string name )
+{
+    Zombie x = Zombie(name);
+
+    x.announce();
+}
