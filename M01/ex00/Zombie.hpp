@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 01:45:33 by rsaf              #+#    #+#             */
-/*   Updated: 2022/08/26 20:08:01 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/09/07 15:01:16 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Zombie
     private:
         std::string name;
     public:
+        Zombie(void);
         Zombie(std::string name);
         void    announce( void );
         ~Zombie();

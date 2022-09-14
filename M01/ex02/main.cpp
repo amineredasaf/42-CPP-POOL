@@ -5,21 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/27 05:41:33 by rsaf              #+#    #+#             */
-/*   Updated: 2022/09/07 17:32:15 by rsaf             ###   ########.fr       */
+/*   Created: 2022/09/14 00:00:47 by rsaf              #+#    #+#             */
+/*   Updated: 2022/09/14 00:13:22 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
 int main(void)
 {
-    Zombie *Walkers;
-    Walkers = zombieHorde(3, "JODITH");
-    for (int x = 0; x < 3; x++)
-    {
-        Walkers->announce();
-    }
-    delete[] Walkers;
-    return (0);
+	std::string brain = "HI THIS IS BRAIN";
+	std::string *stringPTR = &brain;
+	std::string &stringREF = brain;
+	
+	std::cout << "-	The String :	" << brain << "\n";
+	std::cout << "-	The Address:	" << &brain <<"\n";
+	std::cout << "-	The memory address of the string variable." << "\n";
+	std::cout << "-	PTR :	" << stringPTR << "\n";
+	std::cout << "-	REF :	" << &stringREF << "\n";
+	std::cout << "-	The value of the string variable." << "\n";
+	std::cout << "-	PTR :	" << *stringPTR << "\n";
+	std::cout << "-	REF :	" << stringREF << "\n";
 }
