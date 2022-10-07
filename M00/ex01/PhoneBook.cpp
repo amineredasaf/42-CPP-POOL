@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:09:45 by rsaf              #+#    #+#             */
-/*   Updated: 2022/08/20 01:05:13 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/10/07 21:35:46 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ std::string PhoneBook::DisplayPrompet(void)
 	this->PrompetLine = "NULL";
 	std::getline(std::cin, this->PrompetLine);
 	// std::cin >> this->PrompetLine;
-	if (std::cin.eof())
+	if (std::cin.eof()) 
 		return("exit");
 	return this->PrompetLine;
 }
