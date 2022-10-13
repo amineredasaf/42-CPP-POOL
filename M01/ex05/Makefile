@@ -6,13 +6,13 @@
 #    By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 11:43:45 by rsaf              #+#    #+#              #
-#    Updated: 2022/10/13 11:44:00 by rsaf             ###   ########.fr        #
+#    Updated: 2022/10/13 21:13:08 by rsaf             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= Harl20
 CFLAGS= -Wall -Werror -Wextra -std=c++98
-SRS=main.cpp
+SRS=main.cpp Harl.cpp
 OBJ=$(SRS:.cpp=.o)
 %.o:.%c $(INC)
 	c++ $(CFLAGS) -c $< -o $@
