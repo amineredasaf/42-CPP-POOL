@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/07 22:41:44 by rsaf              #+#    #+#              #
-#    Updated: 2022/10/13 10:06:05 by rsaf             ###   ########.fr        #
+#    Created: 2022/10/13 11:43:45 by rsaf              #+#    #+#              #
+#    Updated: 2022/10/13 11:44:00 by rsaf             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME= Sedisforlosers
+NAME= Harl20
 CFLAGS= -Wall -Werror -Wextra -std=c++98
 SRS=main.cpp
 OBJ=$(SRS:.cpp=.o)
