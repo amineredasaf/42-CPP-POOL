@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 14:56:38 by rsaf              #+#    #+#             */
-/*   Updated: 2022/08/19 23:57:49 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/10/31 22:26:33 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ struct PhoneBook
 		Contact     contacts[8];
 		int idx;
 	public:
-		PhoneBook() { this->idx = 0; }
+		PhoneBook();
 		std::string	DisplayPrompet();
 		std::string	readLINE(std::string message);
 		void		changeIDX();

@@ -6,11 +6,22 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:09:45 by rsaf              #+#    #+#             */
-/*   Updated: 2022/10/07 21:35:46 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/10/31 22:31:04 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+
+PhoneBook::PhoneBook()
+{
+	int	i = 0;
+	this->idx = 0;
+	while (i < 8)
+	{
+		contacts[i] = NULL; error here
+	}
+}
 
 std::string PhoneBook::DisplayPrompet(void)
 {
