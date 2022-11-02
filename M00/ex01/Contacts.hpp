@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 12:44:35 by rsaf              #+#    #+#             */
-/*   Updated: 2022/10/31 22:30:59 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/11/02 00:45:21 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Contact
 {
-    private:  
+    private:
         std::string FirstName;
         std::string LastName;
         std::string Nickname;

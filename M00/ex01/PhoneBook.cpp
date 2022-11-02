@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:09:45 by rsaf              #+#    #+#             */
-/*   Updated: 2022/10/31 22:31:04 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/11/02 01:11:16 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,7 @@
 
 PhoneBook::PhoneBook()
 {
-	int	i = 0;
-	this->idx = 0;
-	while (i < 8)
-	{
-		contacts[i] = NULL; error here
-	}
+	this->idx = -1;
 }
 
 std::string PhoneBook::DisplayPrompet(void)
@@ -72,6 +67,7 @@ int		PhoneBook::ActionADD(void)
 	std::string	PhoneNumber;
 	std::string	DarkestSec;
 
+	changeIDX();
 	std::cout << "------------------------------------------\n";
 	FirstName = readLINE("~~Contact First Name\t\t: ");
 	if (FirstName.empty())
@@ -89,7 +85,6 @@ int		PhoneBook::ActionADD(void)
 	if (DarkestSec.empty())
 		return 2;
 	contacts[this->idx].setInfo(FirstName, LastName, Nickname, PhoneNumber, DarkestSec);
-	changeIDX();
 	std::cout << "------------------------------------------\n";
 	return (0);
 }
@@ -102,7 +97,7 @@ void	PhoneBook::DisplayAllContacts(void)
 	int	x;
 
 	x = -1;
-	while (++x < 8)
+	while (++x <= this->idx)
 	{
 		FirstName = contacts[x].getFirstName();
 		LastName = contacts[x].getLastName();
@@ -134,7 +129,7 @@ int		PhoneBook::DisplayNcontact(void)
 	std::string input;
 
 	std::cout << "------------------------------------------\n";
-	while (index < 0 || index > 7)
+	while (index < 0 || index > this->idx)
 	{
 		std::cout << "Entre The Contact index : ";
 		std::getline(std::cin, input);
@@ -144,6 +139,8 @@ int		PhoneBook::DisplayNcontact(void)
 			index = std::stoi(input);
 		else
 			std::cout << "Please Entre The Correct Input\n";
+		std::cout << "idx : "<< index << "\n";
+		std::cout << "this->idx : "<< this->idx<<"\n";
 	}
 	std::cout << "------------------------------------------\n";
 	return (index);	
@@ -151,7 +148,7 @@ int		PhoneBook::DisplayNcontact(void)
 
 int		PhoneBook::ActionSEARCH(void)
 {
-	int	idx = -1;
+	int	id = -1;
 	std::string	FirstName;
 	std::string	LastName;
 	std::string	Nickname;
@@ -159,20 +156,20 @@ int		PhoneBook::ActionSEARCH(void)
 	std::string	Dsec;
 
 	DisplayAllContacts();
-	idx = DisplayNcontact();
-	if (idx >= 0 && idx <= 7)
+	id = DisplayNcontact();
+	if (id >= 0 && id <= 7)
 	{
 		std::cout << "------------------------------------------\n";
 		std::cout << "First Name		:	";
-		std::cout << contacts[idx].getFirstName() << "\n";
+		std::cout << contacts[id].getFirstName() << "\n";
 		std::cout << "Last Name		:	";
-		std::cout << contacts[idx].getLastName()<< "\n";
+		std::cout << contacts[id].getLastName()<< "\n";
 		std::cout << "NickName		:	";
-		std::cout << contacts[idx].getNickname()<< "\n";
+		std::cout << contacts[id].getNickname()<< "\n";
 		std::cout << "PhoneNumber		:	";
-		std::cout << contacts[idx].getPhoneNumber()<< "\n";
+		std::cout << contacts[id].getPhoneNumber()<< "\n";
 		std::cout << "A Secret		:	";
-		std::cout << contacts[idx].getDarkestSecret()<< "\n";
+		std::cout << contacts[id].getDarkestSecret()<< "\n";
 		std::cout << "------------------------------------------\n";
 	}else
 		return (2);
