@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:09:45 by rsaf              #+#    #+#             */
-/*   Updated: 2022/11/08 01:10:53 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/11/08 03:42:02 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ std::string PhoneBook::DisplayPrompet(void)
 
 	x = -1;
 	std::cout << "+---------------+------------+-----------+\n";
-	std::cout << "| Actions : ADD | " << "~2: SEARCH | " << "~3: EXIT  |\n";
+	std::cout << "| Actions : ADD | " << "  SEARCH   | " << "   EXIT   |\n";
 	std::cout << "+---------------+------------+-----------+\n";
 	std::cout << "| Choice Your Action: ";
 	this->PrompetLine = "NULL";
@@ -44,7 +44,7 @@ std::string	PhoneBook::readLINE(std::string message)
 		std::cout << message;
 		std::getline(std::cin, userINPUT);
 		if (std::cin.eof())
-			return std::string();
+			return "";
 	}
 	return (userINPUT);
 }
@@ -135,10 +135,11 @@ int		PhoneBook::DisplayNcontact(void)
 			return(-2);
 		if (input >= "0" && input <= "9")
 			index = std::stoi(input);
-		else
-			std::cout << "Please Entre The Correct Input\n";
-		std::cout << "idx : "<< index << "\n";
-		std::cout << "this->idx : "<< this->idx<<"\n";
+		if (index > this->idx){
+			std::cout << "Error: Input Out Of Range\n";
+			return (-1);
+		}
+			
 	}
 	std::cout << "+----------------------------------------+\n";
 	return (index);	
@@ -155,6 +156,8 @@ int		PhoneBook::ActionSEARCH(void)
 
 	DisplayAllContacts();
 	id = DisplayNcontact();
+	if (id == -1)
+		return (3);
 	if (id >= 0 && id <= 7)
 	{
 	std::cout << "+----------------------------------------+\n";
