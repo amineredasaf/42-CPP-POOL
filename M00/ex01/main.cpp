@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 15:12:59 by rsaf              #+#    #+#             */
-/*   Updated: 2022/11/08 02:01:47 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/11/09 02:29:26 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main(void)
 			code = app.ActionSEARCH();
 		if (code == 2)
 			break;
+		std::cin.clear();
 	}
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 14:09:45 by rsaf              #+#    #+#             */
-/*   Updated: 2022/11/08 03:42:02 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/11/09 02:27:31 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ std::string PhoneBook::DisplayPrompet(void)
 	std::cout << "| Choice Your Action: ";
 	this->PrompetLine = "NULL";
 	std::getline(std::cin, this->PrompetLine);
-	// std::cin >> this->PrompetLine;
 	if (std::cin.eof()) 
 		return("exit");
+	std::cout << std::endl;
 	return this->PrompetLine;
 }
 
@@ -123,23 +123,23 @@ void	PhoneBook::DisplayAllContacts(void)
 
 int		PhoneBook::DisplayNcontact(void)
 {
-	int			index = -1;
-	std::string input;
+	int	index = -1;
+	int	input;
 
 	std::cout << "+----------------------------------------+\n";
 	while (index < 0 || index > this->idx)
 	{
 		std::cout << "Entre The Contact index : ";
-		std::getline(std::cin, input);
+		// std::getline(std::cin, input);
+		std::cin >> input;
 		if (std::cin.eof())
 			return(-2);
-		if (input >= "0" && input <= "9")
-			index = std::stoi(input);
+		if (input >= 0 && input <= 9)
+			index = input;
 		if (index > this->idx){
 			std::cout << "Error: Input Out Of Range\n";
 			return (-1);
 		}
-			
 	}
 	std::cout << "+----------------------------------------+\n";
 	return (index);	
@@ -156,6 +156,8 @@ int		PhoneBook::ActionSEARCH(void)
 
 	DisplayAllContacts();
 	id = DisplayNcontact();
+	std::cin.clear();
+	std::cin.ignore(1000000,'\n');
 	if (id == -1)
 		return (3);
 	if (id >= 0 && id <= 7)
@@ -174,5 +176,6 @@ int		PhoneBook::ActionSEARCH(void)
 	std::cout << "+----------------------------------------+\n";
 	}else
 		return (2);
+	
 	return (0);
 }

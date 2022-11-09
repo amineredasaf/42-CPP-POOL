@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 12:44:33 by rsaf              #+#    #+#             */
-/*   Updated: 2022/11/02 00:49:37 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/11/09 00:56:51 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,3 @@ void    Contact::setInfo(std::string FirstName, std::string LastName, std::strin
     this->PhoneNumber = PhoneNumber;
     this->DarkestSecret = DarkestSecret;
 }
-/* 
-----------  to understand   ----------
-            keyword : this->
-*/
