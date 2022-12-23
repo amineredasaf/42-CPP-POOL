@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 07:26:40 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/23 10:24:35 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/12/23 11:07:08 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,10 @@ void ScavTrap::attack(const std::string &target)
 	}
 	else
 	   std::cout << "-	" << this->Name << "	: Has No Energy/Hit Points to Attack the " << target << "!\n";
+}
+
+void ScavTrap::guardGate()
+{
+	std::cout << "ScavTrap ";
+	std::cout << "-	" << this->Name << "	:  is now in Gate\n";
 }

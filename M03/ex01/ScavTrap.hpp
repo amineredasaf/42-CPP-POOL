@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 07:26:42 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/23 10:24:12 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/12/23 11:06:01 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ class ScavTrap : public ClapTrap
 		~ScavTrap();
 
 		void	attack(const std::string& target);
+		void	guardGate();
 };

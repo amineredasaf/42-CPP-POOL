@@ -6,13 +6,16 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 02:21:20 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/23 08:26:51 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/12/23 11:22:01 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <iostream>
 
+
+
+/*******************************************************/
 ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap ";
@@ -56,8 +59,8 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap ";
 	std::cout << "-	" << this->Name << "	: Destructor Called!\n";
 }
-/***************************************************/
-
+/*******************************************************/
+/*******************************************************/
 void    ClapTrap::attack(const std::string &target)
 {
 	if (this->EnergyPoint > 0 && this->HitPoints > 0)
@@ -96,3 +99,18 @@ void    ClapTrap::eRepaired(unsigned int amount)
 		std::cout << "-	" << this->Name << "	: Can't Repaired with that amount!!!\n";
 	}
 }
+/*******************************************************/
+/*****************************Getters**************************/
+
+std::string	ClapTrap::getName() 		{return this->Name;}
+int			ClapTrap::getHitPoint()		{return this->HitPoints;}
+int			ClapTrap::getEnergyPoint()	{return this->EnergyPoint;}
+int			ClapTrap::getAttackDamge()	{return this->AttackDamge;}
+
+/*******************************************************/
+/**************************Setters*****************************/
+
+void ClapTrap::setName(std::string Name) { this->Name = Name; }
+void ClapTrap::setHitPoint(int HP) { this->HitPoints = HP; }
+void ClapTrap::setEnergyPoint(int EP) { this->EnergyPoint = EP; }
+void ClapTrap::setAttackDamge(int AD) { this->AttackDamge = AD; }
