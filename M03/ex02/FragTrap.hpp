@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 02:21:25 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/24 09:52:21 by rsaf             ###   ########.fr       */
+/*   Created: 2022/12/24 10:14:18 by rsaf              #+#    #+#             */
+/*   Updated: 2022/12/24 10:38:59 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#pragma once
+#include "ScavTrap.hpp"
 
-int main(void)
+class FragTrap : public ClapTrap
 {
-    ClapTrap NEGEN("Negen");
-    ClapTrap RICK("Rick");
+	public:
+		FragTrap();
+		FragTrap(std::string Name);
+		FragTrap(const FragTrap &Obj);
+		FragTrap& operator=(const FragTrap &Obj);
+		~FragTrap();
+		
+		void highFivesGuys(void);
+};
 
-    NEGEN.attack("Rick");
-    RICK.takeDamage(NEGEN.getAttackDamge());
-    RICK.attack("Negen");
-    NEGEN.takeDamage(NEGEN.getAttackDamge());
-    RICK.eRepaired(2);
-}

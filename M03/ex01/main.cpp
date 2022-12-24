@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 02:21:25 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/23 08:29:14 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/12/24 10:06:51 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 int main(void)
 {
     
-    ScavTrap OBJ0("SAF");
-    ClapTrap OBJ1("Reda");
-    ClapTrap OBJ2("Amine");
+    ScavTrap RICK("RICK");
+    ClapTrap CARL("CARL");
+    ClapTrap NEGEN("NEGEN");
 
-    OBJ0.attack("REDA");
-    OBJ1.attack("Amine");
-    OBJ2.takeDamage(4);
-    OBJ2.eRepaired(2);
+    RICK.attack("NEGEN");
+    CARL.attack("NEGEN");
+    NEGEN.takeDamage(RICK.getAttackDamge() + CARL.getAttackDamge());
+    NEGEN.eRepaired(2);
+    NEGEN.attack("Rick");
+    RICK.takeDamage(NEGEN.getAttackDamge());
+    RICK.guardGate();
 }

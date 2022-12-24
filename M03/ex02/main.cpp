@@ -6,20 +6,29 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 02:21:25 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/24 09:52:21 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/12/24 10:43:58 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
-    ClapTrap NEGEN("Negen");
-    ClapTrap RICK("Rick");
+    
+    ScavTrap RICK("RICK");
+    ClapTrap CARL("CARL");
+    ClapTrap NEGEN("NEGEN");
+    FragTrap BETA("BETA");
 
+    RICK.attack("NEGEN");
+    CARL.attack("NEGEN");
+    NEGEN.takeDamage(RICK.getAttackDamge() + CARL.getAttackDamge());
+    NEGEN.eRepaired(2);
     NEGEN.attack("Rick");
     RICK.takeDamage(NEGEN.getAttackDamge());
-    RICK.attack("Negen");
-    NEGEN.takeDamage(NEGEN.getAttackDamge());
-    RICK.eRepaired(2);
+    BETA.attack("Rick");
+    RICK.takeDamage(BETA.getAttackDamge());
+    BETA.highFivesGuys();
+    RICK.attack("Beta");
+    BETA.takeDamage(RICK.getAttackDamge());
 }

@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 02:21:25 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/24 09:52:21 by rsaf             ###   ########.fr       */
+/*   Created: 2022/12/23 07:26:42 by rsaf              #+#    #+#             */
+/*   Updated: 2022/12/24 10:15:59 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "ClapTrap.hpp"
 
-int main(void)
+class ScavTrap : public ClapTrap
 {
-    ClapTrap NEGEN("Negen");
-    ClapTrap RICK("Rick");
+	public:
+		ScavTrap();
+		ScavTrap(std::string Name);
+		ScavTrap(const ScavTrap &Obj);
+		ScavTrap& operator=(const ScavTrap &Obj);
+		~ScavTrap();
 
-    NEGEN.attack("Rick");
-    RICK.takeDamage(NEGEN.getAttackDamge());
-    RICK.attack("Negen");
-    NEGEN.takeDamage(NEGEN.getAttackDamge());
-    RICK.eRepaired(2);
-}
+		void	attack(const std::string& target);
+		void	guardGate();
+};

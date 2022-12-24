@@ -6,21 +6,19 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 07:26:40 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/24 10:08:15 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/12/24 10:34:45 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-#include <string>
-
 
 ScavTrap::ScavTrap()
 {
 	std::cout << "ScavTrap ";
 	std::cout << "-	" << this->Name << "	: Constructor Called!\n";
-	HitPoints = 0;
-	EnergyPoint = 0;
-	AttackDamge = 0;
+	HitPoints = 100;
+	EnergyPoint = 50;
+	AttackDamge = 20;
 }
 
 ScavTrap::ScavTrap(std::string Name)
