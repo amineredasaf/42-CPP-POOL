@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 02:21:20 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/24 09:50:15 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/12/24 19:08:55 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap ";
 	std::cout << "-	" << this->Name << "	: Constructor Called!\n";
-	HitPoints = 0;
-	EnergyPoint = 0;
+	HitPoints = 10;
+	EnergyPoint = 10;
 	AttackDamge = 0;
 }
 
@@ -102,10 +102,10 @@ void    ClapTrap::eRepaired(unsigned int amount)
 /*******************************************************/
 /*****************************Getters**************************/
 
-std::string	ClapTrap::getName() 		{return this->Name;}
-int			ClapTrap::getHitPoint()		{return this->HitPoints;}
-int			ClapTrap::getEnergyPoint()	{return this->EnergyPoint;}
-int			ClapTrap::getAttackDamge()	{return this->AttackDamge;}
+std::string	ClapTrap::getName() const		{return this->Name;}
+int			ClapTrap::getHitPoint()	const	{return this->HitPoints;}
+int			ClapTrap::getEnergyPoint() const	{return this->EnergyPoint;}
+int			ClapTrap::getAttackDamge()	const {return this->AttackDamge;}
 
 /*******************************************************/
 /**************************Setters*****************************/
