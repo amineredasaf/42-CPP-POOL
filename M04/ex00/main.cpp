@@ -6,13 +6,16 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 21:22:44 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/26 21:58:02 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/12/27 16:56:21 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include <iostream>
 
 int main()
 {
@@ -25,5 +28,13 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 	//...
+	// Now The WrongAnimal Class without Virtual
+	const WrongAnimal *beta = new WrongCat();
+	std::cout << "\n" << beta->getType() << " \n";
+	beta->makeSound();
+ 
+	delete meta;
+	delete j;
+	delete i;
 	return 0;
 }

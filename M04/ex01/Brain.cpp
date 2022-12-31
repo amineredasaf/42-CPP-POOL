@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/26 21:24:58 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/27 15:51:32 by rsaf             ###   ########.fr       */
+/*   Created: 2022/12/27 18:01:10 by rsaf              #+#    #+#             */
+/*   Updated: 2022/12/28 21:32:31 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Brain.hpp"
 
-#include <iostream>
-#include <string>
-
-class Animal
+Brain::Brain()
 {
-	protected:
-		std::string type;
-	public:
-		Animal();
-		Animal(std::string type);
-		Animal(const Animal &Animal);
-		Animal& operator=(const Animal &Animal);
-		virtual ~Animal();
+	std::cout << "Brain : constructor\n";
+}
 
-		std::string getType() const;
-		virtual void makeSound() const;
-};
+Brain::Brain(const Brain &BrainObj)
+{
+	*this = BrainObj;
+	return;
+}
+
+Brain& Brain::operator=(const Brain &BrainObj)
+{
+	for(int x = 0; x < 100; x++)
+		this->ideas[x] = BrainObj.ideas[x];
+	return *this;
+}
+
+Brain::~Brain()
+{
+	std::cout << "Brain : destructor\n";
+}

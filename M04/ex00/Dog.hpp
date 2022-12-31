@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 21:28:04 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/27 00:38:59 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/12/27 12:55:06 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,7 @@ class Dog : public Animal
     Dog(const Dog &dog);
     Dog& operator=(const Dog &dog);
     ~Dog();
+
+	std::string getType() const;
+	void makeSound() const;
 };
