@@ -6,13 +6,13 @@
 #    By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 02:21:27 by rsaf              #+#    #+#              #
-#    Updated: 2022/12/23 02:24:22 by rsaf             ###   ########.fr        #
+#    Updated: 2022/12/25 17:50:25 by rsaf             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	ClapTrap
 CC		=	c++
-FLAGS	=	-Wall -Wextra -std=c++98
+FLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRS		=	main.cpp ClapTrap.cpp
 OBJ		=	${SRS:.cpp=.o}
 

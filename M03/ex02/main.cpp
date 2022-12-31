@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 02:21:25 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/24 10:43:58 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/12/29 05:27:08 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ int main(void)
     BETA.highFivesGuys();
     RICK.attack("Beta");
     BETA.takeDamage(RICK.getAttackDamge());
+    BETA.eRepaired(50);
 }

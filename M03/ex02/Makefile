@@ -6,13 +6,13 @@
 #    By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 02:21:27 by rsaf              #+#    #+#              #
-#    Updated: 2022/12/24 10:41:25 by rsaf             ###   ########.fr        #
+#    Updated: 2022/12/25 19:32:40 by rsaf             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ScavTrap
+NAME	=	FragTrap
 CC		=	c++
-FLAGS	=	-Wall -Wextra -std=c++98
+FLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRS		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJ		=	${SRS:.cpp=.o}
 

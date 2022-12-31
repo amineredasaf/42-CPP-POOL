@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 02:21:20 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/24 17:58:00 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/12/29 05:28:38 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,16 +91,10 @@ void    ClapTrap::takeDamage(unsigned int amount)
 
 void    ClapTrap::eRepaired(unsigned int amount)
 {
-	if (amount <= 10 && amount >= 0)
-	{
-		this->HitPoints += amount;
-		this->EnergyPoint--;
-		std::cout << "ClapTrap ";
-		std::cout << "-	" << this->Name << "	: Repaired with " << amount << " of HitPoints!" <<  " (E:" << this->EnergyPoint <<")\n";
-	}
-	else {
-		std::cout << "-	" << this->Name << "	: Can't Repaired with that amount!!!\n";
-	}
+	this->HitPoints += amount;
+	this->EnergyPoint--;
+	std::cout << "ClapTrap ";
+	std::cout << "-	" << this->Name << "	: Repaired with " << amount << " of HitPoints!" <<  " (E:" << this->EnergyPoint <<")\n";
 }
 /*******************************************************/
 /*****************************Getters**************************/
