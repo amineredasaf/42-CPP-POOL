@@ -6,13 +6,13 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 13:58:00 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/27 17:03:02 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/12/31 03:33:43 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() { this->type = "WrongCat";}
+WrongCat::WrongCat() { this->type = "WrongCat";  std::cout << "WrongCat : Default constructor\n";}
 
 WrongCat::WrongCat(std::string type)
 { 

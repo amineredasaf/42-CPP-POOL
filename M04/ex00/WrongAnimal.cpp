@@ -6,13 +6,13 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 13:57:56 by rsaf              #+#    #+#             */
-/*   Updated: 2022/12/27 17:02:57 by rsaf             ###   ########.fr       */
+/*   Updated: 2022/12/31 03:33:21 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() { this->type = "Alians";}
+WrongAnimal::WrongAnimal() { this->type = "Alians";  std::cout << "WrongAnimal : Default constructor\n";}
 
 WrongAnimal::WrongAnimal(std::string type) : type(type) { std::cout << "WrongAnimal : constructor\n"; }
 
