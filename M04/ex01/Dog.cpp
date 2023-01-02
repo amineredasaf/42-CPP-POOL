@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 21:27:58 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/01 04:27:40 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/01 06:18:37 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Dog::Dog(std::string type) : mind(new Brain())
 Dog::Dog(const Dog &dog)
 {
 	std::cout << "Dog : copy constructor\n";
+	this->type = dog.getType();
 	this->mind =  NULL;
 	this->operator=(dog);
 	return;

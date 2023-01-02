@@ -6,13 +6,12 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 21:27:52 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/01 03:57:44 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/01 06:18:58 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Brain.hpp"
-#include <cstddef>
 
 Cat::Cat() : mind(new Brain())
 {
@@ -29,6 +28,7 @@ Cat::Cat(std::string type) : mind(new Brain())
 Cat::Cat(const Cat &Cat)
 {
 	std::cout << "Cat : copy constructor\n";
+	this->type = Cat.getType();
 	this->mind =  NULL;
 	this->operator=(Cat);
 	return;
