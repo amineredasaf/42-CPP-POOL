@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 08:02:49 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/03 05:29:53 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/03 08:03:43 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ Form::Form(const Form &obj) : name(obj.name), gradeSign(obj.gradeSign), gradeExe
 
 Form& Form::operator=(const Form &obj)
 {
+    std::cout << "Assignment opeartor\n";
 	this->sign = obj.sign;
 	return *this;
 }

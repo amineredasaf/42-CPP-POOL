@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 05:54:24 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/03 07:50:56 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/03 08:04:44 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &obj) : name(obj.name), grade(obj.grade)
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &obj)
 {
+    std::cout << "Assignment opeartor\n";
 	this->grade = obj.grade;
 	return *this;
 }

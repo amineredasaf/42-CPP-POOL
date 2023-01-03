@@ -6,11 +6,13 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 05:54:29 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/03 07:51:35 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/03 10:51:29 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include <exception>
 
 int main() 
@@ -42,15 +44,18 @@ int main()
     // }
     {
         try {
-            AForm F("F", 1, 2);
-            Bureaucrat B("b" , 2);
+            AForm *ptr = new ShrubberyCreationForm("SAMA");
+            Bureaucrat B("b" , 144);
+            ptr->beSigned(B);
+            ptr->execute(B);
             try {
-                F.beSigned(B);
+                ptr->beSigned(B);
             }
             catch ( std::exception &ex){
                std::cout << ex.what() << "\n";    
             }
-            B.signForm(F);
+            B.signForm(*ptr);
+            delete ptr;
         }
         catch (std::exception &ex){
             std::cout << ex.what() << "\n";
@@ -58,7 +63,27 @@ int main()
         // B.signAForm(F);       
     }
     {
-        AForm x("Obij", 50, 2);
-        std::cout << x;
+        try {
+            AForm *ptr = new PresidentialPardonForm("wmwmwmwmwmmw");
+            Bureaucrat B("b" , 10);
+            ptr->beSigned(B);
+            ptr->execute(B);
+            try {
+                ptr->beSigned(B);
+            }
+            catch ( std::exception &ex){
+               std::cout << ex.what() << "\n";    
+            }
+            B.signForm(*ptr);
+            delete ptr;
+        }
+        catch (std::exception &ex){
+            std::cout << ex.what() << "\n";
+        }
+        // B.signAForm(F);       
+    }
+    {
+        AForm *x = new ShrubberyCreationForm("x");
+        std::cout << *x;
     }
 }

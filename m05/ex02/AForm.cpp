@@ -36,6 +36,7 @@ AForm::AForm(const AForm &obj) : name(obj.name), gradeSign(obj.gradeSign), grade
 
 AForm& AForm::operator=(const AForm &obj)
 {
+	std::cout << "Assignment opeartor\n";
 	this->sign = obj.sign;
 	return *this;
 }

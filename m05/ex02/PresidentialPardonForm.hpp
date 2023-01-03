@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 07:51:42 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/03 07:52:11 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/03 10:03:54 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,6 @@ class PresidentialPardonForm : public AForm{
 	PresidentialPardonForm(const PresidentialPardonForm& obj);
 	PresidentialPardonForm& operator=(const PresidentialPardonForm& obj);
 	~PresidentialPardonForm();
+
+	void execute(Bureaucrat const & caller) const;
 };

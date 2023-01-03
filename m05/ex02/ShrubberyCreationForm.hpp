@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 05:46:26 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/03 05:51:45 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/03 08:38:56 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,6 @@ class ShrubberyCreationForm : public AForm{
 	ShrubberyCreationForm(const ShrubberyCreationForm& obj);
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& obj);
 	~ShrubberyCreationForm();
+
+	void execute(Bureaucrat const & caller) const;
 };

@@ -26,7 +26,7 @@ class AForm{
 		AForm(std::string name, int gradeSign, int gradeExe);
 		AForm(const AForm &obj);
 		AForm& operator=(const AForm &obj);
-		~AForm();
+		virtual ~AForm();
 
         /*getters*/
 		std::string getName() const;
@@ -37,6 +37,7 @@ class AForm{
 		/*stters*/
         void setSign(bool Sign);
         void beSigned(class Bureaucrat obj);
+		virtual void execute(Bureaucrat const & caller) const = 0;
 		/*Exception Handling*/
 		// class GradeTooHighException : public std::runtime_error {
 		class GradeTooHighException : public std::exception {
