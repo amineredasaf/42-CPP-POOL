@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 05:54:24 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/03 07:48:30 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/03 07:50:56 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void Bureaucrat::GradeIncrementing()
 	this->setGrade(this->grade--);
 }
 
-void Bureaucrat::signForm(class Form &obj)
+void Bureaucrat::signForm(class AForm &obj)
 {
 	if (obj.getSign() == true)
 		std::cout << this->getName() << " signed " << obj.getName() << "\n";

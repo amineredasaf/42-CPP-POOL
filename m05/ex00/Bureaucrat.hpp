@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 05:54:27 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/02 07:51:38 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/03 05:27:23 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,4 @@ class Bureaucrat
 		};
 };
 
-std::ostream&	operator<<(std::ostream& str, const Bureaucrat& obj);
+std::ostream&	operator<<(std::ostream& os, const Bureaucrat& obj);

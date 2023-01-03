@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 05:54:29 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/03 07:49:10 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/03 07:51:35 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main()
     // }
     {
         try {
-            Form F("F", 1, 2);
+            AForm F("F", 1, 2);
             Bureaucrat B("b" , 2);
             try {
                 F.beSigned(B);
@@ -55,10 +55,10 @@ int main()
         catch (std::exception &ex){
             std::cout << ex.what() << "\n";
         }
-        // B.signForm(F);       
+        // B.signAForm(F);       
     }
     {
-        Form x("Obij", 50, 2);
+        AForm x("Obij", 50, 2);
         std::cout << x;
     }
 }
