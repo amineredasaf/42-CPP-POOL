@@ -6,14 +6,16 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 05:54:29 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/04 06:00:46 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/04 11:46:14 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Intern.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include <exception>
+#include <stdexcept>
 
 int main() 
 {
@@ -45,15 +47,33 @@ int main()
 
     {
         try{
-            Bureaucrat B("BIROOOOOOOO", 142);
-            AForm *AF = new ShrubberyCreationForm("Shuuuuuuuuuuuu");
-            AF->beSigned(B);
-            B.executeForm(*AF);
+            Bureaucrat B("BOOS", 24);
+            AForm *ptr;
+            Intern x;
+            ptr = x.makeForm("PresidentialPardon", "1337");
+            ptr->beSigned(B);
+            ptr->execute(B);
         }
         catch (...) {
-            
+            std::cout << "e.what()" << "\n";
         }
+        // catch (std::runtime_error &e) {
+        //     std::cout << e.what() << "\n";
+        // }
     }
+
+
+    // {
+    //     try{
+    //         Bureaucrat B("BIROOOOOOOO", 142);
+    //         AForm *AF = new ShrubberyCreationForm("Shuuuuuuuuuuuu");
+    //         AF->beSigned(B);
+    //         B.executeForm(*AF);
+    //     }
+    //     catch (...) {
+            
+    //     }
+    // }
     // {
     //     try {
     //         AForm *ptr = new ShrubberyCreationForm("SAMA");

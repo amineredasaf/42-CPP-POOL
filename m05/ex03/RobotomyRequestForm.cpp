@@ -6,13 +6,12 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 05:55:19 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/03 10:45:51 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/04 11:19:50 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include "AForm.hpp"
-#include <algorithm>
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("_NOname", 72, 45)
 {
@@ -43,4 +42,5 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void RobotomyRequestForm::execute(const Bureaucrat &caller) const
 {
+    (void)caller;   
 }

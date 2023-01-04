@@ -6,14 +6,20 @@
 #    By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/29 05:54:31 by rsaf              #+#    #+#              #
-#    Updated: 2023/01/03 10:43:39 by rsaf             ###   ########.fr        #
+#    Updated: 2023/01/04 11:17:07 by rsaf             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
  NAME=program
  CPPF=-Wall -Wextra -Werror
- SRS=main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp
- INC=Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp
+ 
+ SRS= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
+ 		PresidentialPardonForm.cpp Intern.cpp \
+		RobotomyRequestForm.cpp \
+
+ INC=Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp Intern.hpp \
+	RobotomyRequestForm.hpp
+ 
  OBJ=$(SRS:.cpp=.o)
 all: $(NAME)
 
