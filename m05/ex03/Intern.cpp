@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 08:09:05 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/04 11:23:40 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/05 02:44:49 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ AForm* Intern::makeForm(std::string name, std::string target)
     }
     if (x == -1)
         throw (std::runtime_error("Error Occur\n"));
+    std::cout << "- Intern creates " << name << "\n";
     switch (x) {
         case 0:
             return (new PresidentialPardonForm(target));

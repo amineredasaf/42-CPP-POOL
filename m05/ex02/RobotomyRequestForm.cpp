@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 05:55:19 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/03 10:45:51 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/05 03:27:26 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,13 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 void RobotomyRequestForm::execute(const Bureaucrat &caller) const
 {
+	if (caller.getGrade() < this->getGradeSign() && this->getSign()){
+        if (std::rand() % 2 == 0)
+		    std::cout << this->getName() << " has been robotomized successfully 50% of the time..\n";
+        else
+		    std::cout << this->getName() << " has been robotomized failed.\n";
+	}
+	else {
+		throw (GradeTooLowException());
+	}
 }
