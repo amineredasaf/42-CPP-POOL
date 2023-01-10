@@ -5,28 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/29 05:54:31 by rsaf              #+#    #+#              #
-#    Updated: 2023/01/05 17:46:57 by rsaf             ###   ########.fr        #
+#    Created: 2023/01/09 19:58:33 by rsaf              #+#    #+#              #
+#    Updated: 2023/01/09 20:22:30 by rsaf             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=program
-CPPF=-Wall -Wextra -Werror -std=c++98
-SRS=main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
-INC=Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp
+SRS=main.cpp
 OBJ=$(SRS:.cpp=.o)
+CPPF=-Wall -Wextra -Werror -std=c++98
 all: $(NAME)
 
-%.o:%.cpp $(INC)
+%.o:%.cpp Base.hpp
 	c++ $(CPPF) -c $< -o $@
-
 $(NAME): $(OBJ)
-	c++ $(CPPF) $^ -o $@
-
+	C++ $(CPPF) $^ -o $@
 clean:
 	rm -f $(OBJ)
-
 fclean: clean
 	rm -f $(NAME)
-	rm -f Shuuuuuuuuuuuu_shrubbery SAMA_shrubbery
 re: fclean $(NAME)

@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 05:54:24 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/03 08:04:11 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/05 03:59:49 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Bureaucrat::Bureaucrat()
 {
+	std::cout << "Bureaucrat constructor\n";
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade) 

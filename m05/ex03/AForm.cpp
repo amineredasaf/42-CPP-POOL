@@ -12,7 +12,7 @@
 
 #include "AForm.hpp"
 
-AForm::AForm() : name("EMPTY"), gradeSign(0), gradeExe(0)
+AForm::AForm() : name("default"), gradeSign(0), gradeExe(0)
 {
 	std::cout << "AForm constructor\n";
 }

@@ -6,13 +6,13 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 05:55:19 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/05 03:27:26 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/05 19:38:16 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include "AForm.hpp"
-#include <algorithm>
+#include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("_NOname", 72, 45)
 {
@@ -44,7 +44,8 @@ RobotomyRequestForm::~RobotomyRequestForm()
 void RobotomyRequestForm::execute(const Bureaucrat &caller) const
 {
 	if (caller.getGrade() < this->getGradeSign() && this->getSign()){
-        if (std::rand() % 2 == 0)
+		std::srand(time(0));
+        if ((std::rand() % 100) > 50)
 		    std::cout << this->getName() << " has been robotomized successfully 50% of the time..\n";
         else
 		    std::cout << this->getName() << " has been robotomized failed.\n";

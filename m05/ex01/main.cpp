@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 05:54:29 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/03 07:49:10 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/05 14:44:18 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,14 @@
 
 int main() 
 {
-    // {
-    //     /* Low Grade */
-    //     try {
-    //         Bureaucrat obj("King", 150);
-    //         obj.GradeDecrementing();
-    //     }
-    //     catch (std::exception &ex){
-    //         std::cout << ex.what();
-    //     }
-    // }
-    // {
-    //     /* high Grade */
-    //     try {
-    //         Bureaucrat obj("King", 1);
-    //         obj.GradeIncrementing();
-    //     }
-    //     catch (std::exception &ex){
-    //         std::cout << ex.what();
-    //     }
-    // }
-    // {
-    //     /* testing << overloading */
-    //     Bureaucrat ob("wmwmwmwmw", 44);
-    //     std::cout << ob;
-    // }
     {
         try {
-            Form F("F", 1, 2);
-            Bureaucrat B("b" , 2);
+            /* Create Form Object and init inherited members*/
+            Form F("Forrrrrrr", 4, 2);
+            /* Create Bure.. Object*/
+            Bureaucrat B("biroooooooo" , 3);
             try {
+                /* biro need to sign the form */
                 F.beSigned(B);
             }
             catch ( std::exception &ex){

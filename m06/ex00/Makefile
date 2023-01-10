@@ -5,19 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/29 05:54:31 by rsaf              #+#    #+#              #
-#    Updated: 2023/01/05 17:46:57 by rsaf             ###   ########.fr        #
+#    Created: 2023/01/06 15:18:15 by rsaf              #+#    #+#              #
+#    Updated: 2023/01/07 21:02:36 by rsaf             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=program
+NAME=Conversion
 CPPF=-Wall -Wextra -Werror -std=c++98
-SRS=main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
-INC=Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp
+SRS=main.cpp Conversion.cpp
 OBJ=$(SRS:.cpp=.o)
-all: $(NAME)
 
-%.o:%.cpp $(INC)
+all:$(NAME)
+
+%.o:%.cpp Conversion.hpp
 	c++ $(CPPF) -c $< -o $@
 
 $(NAME): $(OBJ)
@@ -25,8 +25,6 @@ $(NAME): $(OBJ)
 
 clean:
 	rm -f $(OBJ)
-
 fclean: clean
 	rm -f $(NAME)
-	rm -f Shuuuuuuuuuuuu_shrubbery SAMA_shrubbery
 re: fclean $(NAME)

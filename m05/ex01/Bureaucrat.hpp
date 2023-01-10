@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 05:54:27 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/03 07:46:43 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/05 17:49:50 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ class Bureaucrat
 
 		/*stters*/
 		void setGrade(int Grade);
-		void signForm(class Form &obj);
 
 		/*increment and decrament*/
 		void	GradeIncrementing();
 		void	GradeDecrementing();
+		void	signForm(class Form &obj);
 		/*Exception Handling*/
 		// class GradeTooHighException : public std::runtime_error {
 		class GradeTooHighException : public std::exception {

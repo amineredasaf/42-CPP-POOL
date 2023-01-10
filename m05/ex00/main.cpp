@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 05:54:29 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/02 09:00:32 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/05 04:04:44 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main()
     {
         /* Low Grade */
         try {
-            Bureaucrat obj("King", 170);
+            Bureaucrat obj("King", 150);
             obj.GradeDecrementing();
         }
         catch (std::exception &ex){
@@ -27,7 +27,7 @@ int main()
     {
         /* high Grade */
         try {
-            Bureaucrat obj("King", -2);
+            Bureaucrat obj("King", 1);
             obj.GradeIncrementing();
         }
         catch (std::exception &ex){
@@ -35,6 +35,7 @@ int main()
         }
     }
     {
+        /* operator overloading test*/
         Bureaucrat ob("wmwmwmwmw", 50);
         std::cout << ob;
     }

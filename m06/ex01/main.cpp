@@ -5,27 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/29 05:54:29 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/05 19:45:55 by rsaf             ###   ########.fr       */
+/*   Created: 2023/01/09 14:32:19 by rsaf              #+#    #+#             */
+/*   Updated: 2023/01/09 18:41:44 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
-#include "Bureaucrat.hpp"
-#include "Intern.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include <exception>
-#include <stdexcept>
+#include "Data.hpp"
 
-int main() 
+
+uintptr_t serialize(Data* ptr){
+	return reinterpret_cast <uintptr_t>(ptr);
+}
+
+Data* deserialize(uintptr_t raw){
+	return reinterpret_cast<Data*>(raw);
+}
+
+int main()
 {
-    {
-        Bureaucrat B("BIROOOOOOO", 20);
-        Intern x;
-        AForm *ptr;
-        ptr = x.makeForm("PresidentialPardon", "OWOWOWOWOOWOWOW");
-        ptr->beSigned(B);
-        B.executeForm(*ptr);
-    }
+	Data obj;
+	obj.x = 3;
+	obj.y = 4;
+
+	uintptr_t uiptr = serialize(&obj);
+	Data *cpy = deserialize(uiptr);
+	std::cout << cpy->x << " " << cpy->y << "\n";
+	std::cout << "- address of cpy : " << cpy << "\n";
+	std::cout << "- address of obj : " << &obj << "\n";
+	std::cout << "- address of uiptr : " << &uiptr << "\n";
+	return 0;
 }

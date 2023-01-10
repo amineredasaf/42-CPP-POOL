@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 05:54:27 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/03 05:27:23 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/05 04:06:37 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
-#include <ostream>
 
 class Bureaucrat
 {
