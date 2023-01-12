@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:50:15 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/10 17:33:28 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/10 18:36:51 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,14 @@ bool	isDuplicated(std::string inputString, char toFind)
 /*********************************************************/
 char	Conversion::findType(std::string inputString)
 {
+	/*********************************************************************************/
 	/* int */
 	if (inputString.find_first_not_of("+-0123456789") == inputString.npos\
 	&& isCorrectPos(inputString, '+', 0) && isCorrectPos(inputString, '-', 0))
 	{
 		fromInt(atoi(inputString.c_str()));
 	}
+	/*********************************************************************************/
 	/* float */
 	else if (inputString.find_first_not_of("+-0123456789.f") == inputString.npos\
 	&& isCorrectPos(inputString, 'f', inputString.length() - 1)\
@@ -99,6 +101,7 @@ char	Conversion::findType(std::string inputString)
 		ss >> this->_float;
 		fromFloat(this->_float);
 	}
+	/*********************************************************************************/
 	/* DOUBLE */
 	else if (inputString.find_first_not_of("+-0123456789.") == inputString.npos\
 	&& isDuplicated(inputString, '.')
@@ -110,12 +113,15 @@ char	Conversion::findType(std::string inputString)
 		ss >> this->_double;
 		fromDouble(this->_double);
 	}
+	/*********************************************************************************/
 	/* Nan */
 	else if (inputString == "nan" || inputString == "-inf" || inputString == "+inf")
 		fromNan(inputString);
+	/*********************************************************************************/
 	/* Nanf */
 	else if (inputString == "nanf" || inputString == "-inff" || inputString == "+inff")
 		fromNanf(inputString);
+	/*********************************************************************************/
 	/* char */
 	else if (inputString.length() == 1 && (isFromAscii(inputString[0]))){	
 		fromChar(inputString[0]);

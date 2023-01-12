@@ -6,7 +6,7 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 19:59:07 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/10 17:26:00 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/12 01:16:00 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,24 @@ Base * generate(void){
 
 void identify(Base* p){
 
-	if (dynamic_cast<A*>(p))
+	if (dynamic_cast<A*>(p)){
 		std::cout << "A ptr is casted successfully\n";
+		return;
+	}
 	else
 		std::cout << "A ptr is casted failed\n";
 		
-	if (dynamic_cast<B*>(p))
+	if (dynamic_cast<B*>(p)){
 		std::cout << "B ptr is casted successfully\n";
+		return;
+	}
 	else
 		std::cout << "B ptr is casted failed\n";
 	 	
-	if (dynamic_cast<C*>(p))
+	if (dynamic_cast<C*>(p)){
 		std::cout << "C ptr is casted successfully\n";
+		return;
+	}
 	else
 		std::cout << "C ptr is casted failed\n";
 	 	
@@ -58,18 +64,21 @@ void identify(Base& p)
 	try{
 		A a = dynamic_cast< A&>(p);
 		std::cout << "A ref is casted successfully\n";
+		return;
 	}
 	catch(...){ std::cout << "A ref is casted failed\n"; }
 
 	try{
 		B b = dynamic_cast< B&>(p);
 		std::cout << "B ref is casted successfully\n";
+		return;
 	}
 	catch(...){ std::cout << "B ref is casted failed\n"; }
 
 	try {
 		C c = dynamic_cast< C&>(p);
 		std::cout << "C ref is casted successfully\n";
+		return;
 	} 
 	catch (...){ std::cout << "C ref is casted failed\n"; }
 
@@ -80,5 +89,6 @@ int main()
 	Base x;
 	Base *ptr = generate();
 	identify(ptr);
-	identify(x);
+	identify(*ptr);
+	delete ptr;
 }
