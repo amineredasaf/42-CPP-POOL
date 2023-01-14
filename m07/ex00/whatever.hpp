@@ -6,16 +6,15 @@
 /*   By: rsaf <rsaf@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:53:32 by rsaf              #+#    #+#             */
-/*   Updated: 2023/01/10 23:43:58 by rsaf             ###   ########.fr       */
+/*   Updated: 2023/01/14 15:15:33 by rsaf             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include "whatever.hpp"
 #include <iostream>
 
 template<typename  T>
-
-
 void    swap (T &rhs, T &lhs){
 	
 	T tmp;
